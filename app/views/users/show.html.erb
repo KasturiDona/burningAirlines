@@ -10,5 +10,12 @@
   <%= @user.email %>
 </p>
 
+<p>
+	<% @user.reservations.each do |reservation| %>
+		<strong>Reservation ID. <%= link_to(reservation.id, reservation) %></strong>
+		<strong>Flight Number: <%= reservation.flight_number %></strong>
+	<% end %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

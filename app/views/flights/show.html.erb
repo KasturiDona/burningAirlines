@@ -26,5 +26,14 @@
   <%= @flight.flight_date %>
 </p>
 
+<p>
+  <strong>Number of reservations:</strong> 
+  <%= @flight.reservations.count %>
+</p>
+
+<p>
+  <strong>Make a booking</strong>
+</p>
+
 <%= link_to 'Edit', edit_flight_path(@flight) %> |
 <%= link_to 'Back', flights_path %>

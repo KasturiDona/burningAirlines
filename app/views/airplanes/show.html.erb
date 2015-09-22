@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Airplane Name:</strong>
   <%= @airplane.name %>
+</p>
+
+<p>
+	<% @airplane.flights.each do |flight| %>
+		<strong>Flight No. <%= link_to(flight.flight_number, flight) %></strong>
+	<% end %>
 </p>
 
 <p>

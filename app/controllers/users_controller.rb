@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        session[:user_id] = @user.id
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -66,6 +67,10 @@ class UsersController < ApplicationController
     def set_user
       @user = User.find(params[:id])
     end
+
+    # def check_if_logged_in
+    #   redirect_to root_path unless @current_user.present?
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
