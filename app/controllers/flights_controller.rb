@@ -10,6 +10,12 @@ class FlightsController < ApplicationController
   # GET /flights/1
   # GET /flights/1.json
   def show
+    @flight = Flight.find(params[:id])
+    # Guy store the flight details in session
+    session[:flight_id] = @flight.id
+    session[:flight_number] = @flight.flight_number
+    session[:rows] = @flight.airplane.rows
+    session[:columns] = @flight.airplane.columns
   end
 
   # GET /flights/new
