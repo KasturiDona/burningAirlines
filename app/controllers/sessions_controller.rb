@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   # creating a new user session when a user logs in
   def create
   	user = User.find_by :email => params[:email]
-  	if user.present? 
+  	if user.present? && user.authenticate(params[:password])
   		session[:user_id] = user.id
   		redirect_to root_path
   	else

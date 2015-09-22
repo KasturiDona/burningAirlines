@@ -19,6 +19,6 @@ fl3 = Flight.create :flight_number => "412", :to => "LAX", :from => "JFK"
 fl4 = Flight.create :flight_number => "09", :to => "JFK", :from => "LAX"
 
 User.destroy_all
-u1 = User.create :name => 'Phil', :email => "phil@gmail.com"
-u2 = User.create :name => 'Kylie', :email => "kylie@gmail.com"
-
+u1 = User.create :name => 'Phil', :email => "phil@gmail.com", :password => 'chicken', :password_confirmation => 'chicken'
+u2 = User.create :name => 'Kylie', :email => "kylie@gmail.com", :password => 'chicken', :password_confirmation => 'chicken'
+u3 = User.create :name => 'Guy', :email => "guy@gmail.com", :password => 'chicken', :password_confirmation => 'chicken', :admin => true
