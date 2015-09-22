@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/login' => 'sessions#destroy'
   
+  get '/reserve' => 'reservations#home'  # Start the backbone
 
 end

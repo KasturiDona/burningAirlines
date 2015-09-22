@@ -21,4 +21,28 @@ fl4 = Flight.create :flight_number => "09", :to => "JFK", :from => "LAX"
 User.destroy_all
 u1 = User.create :name => 'Phil', :email => "phil@gmail.com"
 u2 = User.create :name => 'Kylie', :email => "kylie@gmail.com"
+u3 = User.create :name => 'Guy', :email => "guy@gmail.com"
+
+Reservation.destroy_all
+r1 = Reservation.create :row => 1, :column => 1
+r2 = Reservation.create :row => 1, :column => 2
+r3 = Reservation.create :row => 2, :column => 1
+
+ap1.flights << fl1 << fl2
+
+fl1.reservations << r1 << r2 
+fl2.reservations << r3
+
+u1.reservations << r1
+u2.reservations << r2
+u3.reservations << r3
+
+
+
+
+
+
+
+
+
 

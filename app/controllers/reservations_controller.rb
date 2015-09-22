@@ -1,6 +1,16 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
+  def home
+    # Guy set more GON fields for the backbone bullshit
+    gon.user_id = @current_user.id
+    gon.user_name = @current_user.name
+    gon.flight_id = session[:flight_id]
+    gon.flight_number = session[:flight_number]
+    gon.rows = session[:rows]
+    gon.columns = session[:columns]
+  end
+
   # GET /reservations
   # GET /reservations.json
   def index
