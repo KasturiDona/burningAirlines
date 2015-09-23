@@ -1,21 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Name :</strong>
   <%= @user.name %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong>Email :</strong>
   <%= @user.email %>
 </p>
+
+<hr />
 
 <p>
 	<% @user.reservations.each do |reservation| %>
 	<ul>
-		<li><strong>Reservation ID. <%= link_to(reservation.id, reservation) %></strong></li>
-		<li><strong>Flight Number: <%= reservation.flight.flight_number %></strong></li>
+		<li><strong>Reservation ID : <%= link_to(reservation.id, reservation) %></strong></li>
+		<li><strong>Flight Number : <%= reservation.flight.flight_number %></strong></li>
 	</ul>
+
 	<% end %>
 </p>
 
