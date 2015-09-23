@@ -22,6 +22,9 @@ $(document).ready(function () {
   console.log("Rows:" + gon.rows);
   console.log("Columns:" + gon.columns);
 
+   console.log("Reserve name:", gon.reserve_name);
+
+
   app.reservations = new app.Reservations();
   // This will trigger the 'add' event on the collection to render the reservations once loaded.
   app.reservations.fetch();
@@ -29,7 +32,7 @@ $(document).ready(function () {
   // Poll the server for new secrets every 4 seconds.
   setInterval(function () {
     app.reservations.fetch();
-  }, 4000);
+  }, 1000);
 
   app.router = new app.AppRouter();
   Backbone.history.start();
