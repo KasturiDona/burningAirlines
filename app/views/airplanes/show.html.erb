@@ -5,9 +5,9 @@
   <%= @airplane.name %>
 </p>
 
-<p>
+<p><strong>Flights:</strong>
 	<% @airplane.flights.each do |flight| %>
-		<strong>Flight No. <%= link_to(flight.flight_number, flight) %></strong>
+		<li><%= link_to(flight.flight_number, flight) %>: <%= flight.flight_date %></li>
 	<% end %>
 </p>
 
