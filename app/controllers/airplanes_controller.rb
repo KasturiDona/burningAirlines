@@ -54,6 +54,8 @@ class AirplanesController < ApplicationController
   # DELETE /airplanes/1
   # DELETE /airplanes/1.json
   def destroy
+    @airplane.flights.destroy_all
+    @airplane.reservations.destroy_all
     @airplane.destroy
     respond_to do |format|
       format.html { redirect_to airplanes_url, notice: 'Airplane was successfully destroyed.' }
