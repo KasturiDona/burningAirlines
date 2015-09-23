@@ -1,28 +1,17 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the Burning Airlines group project done by Guy, Kasturi, Philip and Kylie. Users create their account to reserve flight seats in real-time.
 
-Things you may want to cover:
+Important points:
 
-* Ruby version
+* Ruby version - 2.3.3
 
-* System dependencies
+* System dependencies - bycrypt, gon, heroku, postgresql, bootstrap, underscore, backbone, javaScript, jQuery, HTML, CSS.
 
-* Configuration
+* Configuration - airplanes, flights, reservations and user models. User model has an admin.
 
-* Database creation
+* Database creation and initialization - run the seeds file. Admin had deltete rights.
 
-* Database initialization
+* Services - Active record for job query and backbone for real time seat booking.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Deployment instructions - on heroku.
