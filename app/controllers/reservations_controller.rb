@@ -7,6 +7,7 @@ class ReservationsController < ApplicationController
     gon.user_name = @current_user.name
     gon.flight_id = session[:flight_id]
     gon.flight_number = session[:flight_number]
+    gon.flight_date = session[:flight_date]
     gon.rows = session[:rows]
     gon.columns = session[:columns]
 

@@ -14,6 +14,7 @@ class FlightsController < ApplicationController
     # Guy store the flight details in session
     session[:flight_id] = @flight.id
     session[:flight_number] = @flight.flight_number
+    session[:flight_date] = @flight.flight_date
     session[:rows] = @flight.airplane.rows
     session[:columns] = @flight.airplane.columns
   end

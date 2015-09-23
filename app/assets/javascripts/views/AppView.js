@@ -6,6 +6,9 @@ app.AppView = Backbone.View.extend({
     var appViewTemplate = $('#appViewTemplate').html();
     this.$el.html( appViewTemplate );
 
+    this.$el.find("#data").text( "Flight Number : " + gon.flight_number ).attr( "class", "blue" );
+    this.$el.find("#flydate").text( "Flight Date : " + gon.flight_date ).attr( "class", "blue" );
+
     // Render the grid of seats 
 
     for (var col=1; col<=gon.columns; col++) {
@@ -32,6 +35,7 @@ app.AppView = Backbone.View.extend({
       			availseatView.render();
     		};
     	};
+
       this.$el.find("#reservations").append( "<br />" );
     };
   }
