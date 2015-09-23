@@ -11,8 +11,19 @@ app.AppView = Backbone.View.extend({
 
     // Render the grid of seats 
 
+    var letters = " ABCDE";
+    for (var row=1; row<=gon.rows; row++) {
+      this.$el.find("#reservations").append( " <b>-- " + letters[row] +" --</b> " );
+    }
+    this.$el.find("#reservations").append( "<br />" );
+
     for (var col=1; col<=gon.columns; col++) {
+
+      this.$el.find("#reservations").append( "<b>"+col+"</b>" );
+
     	for (var row=1; row<=gon.rows; row++) {
+
+        // this.$el.find("#reservations").append( "<b>*</b>" );
 
     		// Check if this row column is booked
     		var reserved = false;
