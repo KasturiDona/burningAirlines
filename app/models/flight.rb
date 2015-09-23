@@ -15,4 +15,6 @@
 class Flight < ActiveRecord::Base
 	has_many :reservations
 	belongs_to :airplane
+	validates_uniqueness_of :to, :case_sensitive => false
+	validates_uniqueness_of :from, :case_sensitive => false
 end
