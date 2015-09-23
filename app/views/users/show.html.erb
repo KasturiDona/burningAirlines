@@ -13,7 +13,7 @@
 <p>
 	<% @user.reservations.each do |reservation| %>
 		<strong>Reservation ID. <%= link_to(reservation.id, reservation) %></strong>
-		<strong>Flight Number: <%= reservation.flight_number %></strong>
+		<strong>Flight Number: <%= reservation.flight.flight_number %></strong>
 	<% end %>
 </p>
 

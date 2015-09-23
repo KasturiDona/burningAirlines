@@ -1,10 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<a href="airplanes/new" class="btn btn-primary btn-lg">Create New Plane</a>
+
 <h1>Listing Airplanes</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
-    <tr>
+    <tr class="danger">
       <th>Name</th>
       <th>Rows</th>
       <th>Columns</th>
@@ -14,13 +16,17 @@
 
   <tbody>
     <% @airplanes.each do |airplane| %>
-      <tr>
+      <tr class="table-striped">
         <td><%= airplane.name %></td>
         <td><%= airplane.rows %></td>
         <td><%= airplane.columns %></td>
         <td><%= link_to 'Show', airplane %></td>
+      <% if @current_user.present? %>
+      <% if @current_user.admin? %>
         <td><%= link_to 'Edit', edit_airplane_path(airplane) %></td>
         <td><%= link_to 'Destroy', airplane, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+      <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +34,3 @@
 
 <br>
 
-<%= link_to 'New Airplane', new_airplane_path %>

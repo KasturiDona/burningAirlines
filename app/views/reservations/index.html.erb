@@ -1,10 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<a href="reservations/new" class="btn btn-primary btn-lg">Create New Reservation</a>
+
 <h1>Listing Reservations</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
-    <tr>
+    <tr class="danger">
       <th>Row</th>
       <th>Column</th>
       <th>Flight</th>
@@ -19,8 +21,12 @@
         <td><%= reservation.column %></td>
         <td><%= reservation.flight_id %></td>
         <td><%= link_to 'Show', reservation %></td>
+      <% if @current_user.present? %>
+      <% if @current_user.admin? %>
         <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
         <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+      <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Reservation', new_reservation_path %>
+
