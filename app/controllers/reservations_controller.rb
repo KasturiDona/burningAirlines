@@ -2,13 +2,19 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
   def home
-    # Guy set more GON fields for the backbone bullshit
+    
     gon.user_id = @current_user.id
     gon.user_name = @current_user.name
     gon.flight_id = session[:flight_id]
     gon.flight_number = session[:flight_number]
     gon.rows = session[:rows]
     gon.columns = session[:columns]
+
+    gon.reserve_name = []
+    User.all.each do |u| 
+      gon.reserve_name[u.id] = u.name 
+    end
+
   end
 
   # GET /reservations
@@ -34,15 +40,18 @@ class ReservationsController < ApplicationController
   # POST /reservations
   # POST /reservations.json
   def create
-    @reservation = Reservation.new(reservation_params)
+    reservations = Reservation.where( flight_id: params[:flight_id], row: params[:row], column: params[:column] )
+    if reservations.empty?
+      @reservation = Reservation.new(reservation_params)
 
-    respond_to do |format|
-      if @reservation.save
-        format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
-        format.json { render :show, status: :created, location: @reservation }
-      else
-        format.html { render :new }
-        format.json { render json: @reservation.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @reservation.save
+          format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
+          format.json { render :show, status: :created, location: @reservation }
+        else
+          format.html { render :new }
+          format.json { render json: @reservation.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
