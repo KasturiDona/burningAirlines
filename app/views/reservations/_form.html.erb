@@ -11,21 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
   <%= f.label :flight %><br>
-  <%= f.select :flight_id, Flight.all.map { |flight| [ flight.flight_number + " : " + flight.from + " to " + flight.to ] }, :include_blank => true %>
+  <%= f.select :flight_id, Flight.all.map { |flight| [ flight.flight_number + " : " + flight.from + " to " + flight.to ] }, :include_blank => true, :class=> "form-control" %>
 </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :row %><br>
-    <%= f.number_field :row, in: 2..5 %>
+    <%= f.number_field :row, in: 2..5, :class=> "form-control" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :column %><br>
-    <%= f.number_field :column, in: 10..50 %>
+    <%= f.number_field :column, in: 10..50, :class=> "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'submit btn btn-primary' %>
   </div>
 <% end %>

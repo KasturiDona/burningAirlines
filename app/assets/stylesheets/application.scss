@@ -10,9 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
-
  */
- @import "bootstrap-sprockets";
+
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 $bgDefault      : #e74c3c;
@@ -65,4 +65,29 @@ $colHighlight       : #ffbbbc;
       > a, > a:hover, > a:focus, {
         color: $colHighlight;
         background-color: $bgHighlight; }}}
+}
+
+ body {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.green {
+  color: green;
+  padding: 5px;
+}
+
+.red {
+  color: red;
+  padding: 5px;
+}
+
+#main {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#backToFlights {
+  margin: 0 auto;
+  text-align: center;
 }

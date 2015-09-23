@@ -4,7 +4,7 @@ class FlightsController < ApplicationController
   # GET /flights
   # GET /flights.json
   def index
-    @flights = Flight.all
+    @flights = Flight.order(:flight_date)
   end
 
   # GET /flights/1
@@ -16,6 +16,13 @@ class FlightsController < ApplicationController
     session[:flight_number] = @flight.flight_number
     session[:rows] = @flight.airplane.rows
     session[:columns] = @flight.airplane.columns
+  end
+
+  def search
+  end
+
+  def results
+    @flights = Flight.where(to: params[:to], from: params[:from]).order(:flight_date)
   end
 
   # GET /flights/new

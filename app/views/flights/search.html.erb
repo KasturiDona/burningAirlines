@@ -1,0 +1,17 @@
+
+<h2>Search Flights</h2>
+
+<%= form_tag flights_results_path, :method => :get do |f| %>
+	<div class="form-group">
+		<%= label_tag :to %>
+		<%= text_field_tag :to, nil, :required => true, :class=> "form-control"  %>
+	</div>
+
+	<div class="form-group">
+		<%= label_tag :from %>
+		<%= text_field_tag :from, nil, :required => true, :class=> "form-control"  %>
+	</div>
+
+	<%= submit_tag "Search", :class => 'submit btn btn-primary' %>
+<% end %>
+

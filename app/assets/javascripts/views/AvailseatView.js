@@ -12,7 +12,8 @@ app.AvailseatView = Backbone.View.extend({
 
   	// TODO add a click event on this reservation
 
-    this.$el.text( "(O)" ) ;
+    this.$el.text( " [-----] " );
+    this.$el.attr( "class", "green");
     this.$el.attr('id',( (app.row).toString() + "-" + (app.col).toString() ) );
     this.$el.appendTo('#reservations');
   },
@@ -34,5 +35,8 @@ reserveSeat: function () {
     r.save().done(function () {
     	app.reservations.add(r);
     });
+
+    var rowLetter = "ABCDE";
+    alert( "Reserved seat : " + rowLetter[row] + col );
   }
 });

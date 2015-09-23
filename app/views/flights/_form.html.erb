@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :flight_number %><br>
-    <%= f.text_area :flight_number, :required => true %>
+    <%= f.text_area :flight_number, :required => true, :class=> "form-control" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :to %><br>
-    <%= f.text_area :to %>
+    <%= f.text_area :to, :class=> "form-control" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :from %><br>
-    <%= f.text_area :from %>
+    <%= f.text_area :from, :class=> "form-control" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :flight_date %><br>
-    <%= f.date_select :flight_date %>
+    <%= f.date_select :flight_date, :class=> "form-control" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
   <%= f.label :airplane %><br>
-  <%= f.select :airplane_id, Airplane.all.map { |airplane| [ airplane.name, airplane.id ] }, :include_blank => true %>
+  <%= f.select :airplane_id, Airplane.all.map { |airplane| [ airplane.name, airplane.id ] }, :include_blank => true, :class=> "form-control" %>
 </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'submit btn btn-primary'%>
   </div>
 <% end %>

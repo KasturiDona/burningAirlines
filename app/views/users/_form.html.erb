@@ -11,23 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :name %><br>
-    <%= f.text_area :name, :required => true %>
+    <%= f.text_area :name, :required => true, :class=> "form-control"  %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :email %><br>
-    <%= f.text_area :email %>
+    <%= f.text_area :email, :class=> "form-control"  %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, :class=> "form-control"  %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, :class=> "form-control"  %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'submit btn btn-primary' %>
   </div>
 <% end %>

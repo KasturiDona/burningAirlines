@@ -1,0 +1,19 @@
+
+<% if @flights.any? %>
+	<% @flights.each do |flight| %>
+		<p>Flight Number: 
+			<%= link_to( flight[:flight_number], flight ) %>
+		</p>
+		<p>To: <%= flight.to %></p>
+
+		<p>From: <%= flight.from %></p>
+
+		<p>Flight date: <%= flight.flight_date %></p>
+
+		<p>Seats available: <%= (flight.airplane.rows * flight.airplane.columns) - flight.reservations.count %></p>
+		<hr />
+	<% end %>
+
+<% else %>
+	<h2>Error !!!</h2>
+<% end %>
