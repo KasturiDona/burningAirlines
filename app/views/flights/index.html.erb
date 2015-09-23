@@ -25,7 +25,7 @@
         <td><%= flight.to %></td>
         <td><%= flight.from %></td>
         <% if flight.flight_date.present? %>
-          <td><%= flight.flight_date %></td>
+          <td><%= flight.flight_date.strftime "%A, %e %B %Y" %></td>
         <% else %>
           <td>-</td>
         <% end %>

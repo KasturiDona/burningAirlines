@@ -14,6 +14,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:400,700);
 
 $bgDefault      : #e74c3c;
 $bgHighlight    : #c0392b;
@@ -68,6 +69,7 @@ $colHighlight       : #ffbbbc;
 }
 
  body {
+  font-family: 'Comfortaa', cursive;
   margin: 0 auto;
   padding: 20px;
 }
@@ -80,6 +82,11 @@ $colHighlight       : #ffbbbc;
 .red {
   color: red;
   padding: 5px;
+}
+
+a:hover {
+  color: red;
+  text-decoration: none;
 }
 
 #main {
