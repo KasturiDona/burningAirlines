@@ -20,14 +20,14 @@
         <td><%= reservation.display_row %><%= reservation.column %></td>
         <td><%= reservation.flight.flight_number %></td>
         <td><%= reservation.flight.flight_date.strftime "%A, %e %B %Y" %></td>
-        <% if @current_user.present? && @current_user.admin? %>
+        <% if ( @current_user.present? && @current_user.admin? ) || ( @current_user === reservation.user ) %>
           <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td> - </td>
         <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
 
 

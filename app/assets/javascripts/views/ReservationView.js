@@ -14,13 +14,13 @@ app.ReservationView = Backbone.View.extend({
    
     var name = gon.reserve_name[id];
 
-    this.$el.text( "[" + name + "]" );
+    this.$el.text( name );
     this.$el.attr( "class", "red" );
     this.$el.appendTo('#reservations');
   },
 
   renderNewReservation: function ( row, column ) {
-  	this.$el.find('#' + row + "-" + column).text( "[" + gon.user_name + "]" );
+  	this.$el.find('#' + row + "-" + column).text( gon.user_name );
     this.$el.find('#' + row + "-" + column).attr( "class", "red" );
    }
 });

@@ -12,7 +12,7 @@ app.AvailseatView = Backbone.View.extend({
 
   	// TODO add a click event on this reservation
 
-    this.$el.text( " [-----] " );
+    this.$el.html( " <span class='glyphicon glyphicon-check' aria-hidden='true'></span> " );
     this.$el.attr( "class", "green");
     this.$el.attr('id',( (app.row).toString() + "-" + (app.col).toString() ) );
     this.$el.appendTo('#reservations');
