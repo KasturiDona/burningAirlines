@@ -12,5 +12,8 @@ app.Reservations = Backbone.Collection.extend({
     this.on('add', function (reservation) {
       app.appView.render();
     });
+    this.on('remove', function (reservation) {
+      app.appView.render();
+    });
   }
 });
