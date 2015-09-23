@@ -36,7 +36,7 @@ reserveSeat: function () {
     	app.reservations.add(r);
     });
 
-    var rowLetter = "ABCDE";
+    var rowLetter = " ABCDE";
     alert( "Reserved seat : " + rowLetter[row] + col );
   }
 });
