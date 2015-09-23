@@ -22,7 +22,7 @@ class FlightsController < ApplicationController
   end
 
   def results
-    @flights = Flight.where(to: params[:to], from: params[:from]).order(:flight_date)
+    @flights = Flight.where(to: params[:to].upcase, from: params[:from].upcase).order(:flight_date)
   end
 
   # GET /flights/new
