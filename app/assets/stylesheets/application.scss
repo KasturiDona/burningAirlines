@@ -101,6 +101,21 @@ a:hover {
   text-align: center;
 }
 
+#giphy {
+  position: relative;
+  float: right;
+  right: 0;
+  -webkit-transition: right 2s ease;
+  -moz-transition: right 2s ease;
+  -ms-transition: right 2s ease;
+  -o-transition: right 2s ease;
+  transition: right 2s ease;
+}
+
+#giphy.animate {
+  right: 1500px;
+}
+
 .white {
   color: white;
 }

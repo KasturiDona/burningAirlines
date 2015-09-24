@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<div id="giphy">
+  <img src="https://media.giphy.com/media/H7gQR4tY8jzZ6/giphy.gif" width="240" height="240">
+</div>
 
 <% if @current_user.present? && @current_user.admin? %>
   <a href="flights/new" class="btn btn-primary btn-lg">Create New Flight</a>
